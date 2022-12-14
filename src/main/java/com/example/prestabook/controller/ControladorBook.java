@@ -12,12 +12,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.prestabook.dao.IBookDAO;
 import com.example.prestabook.dto.Book;
 import com.example.prestabook.service.BookServiceImpl;
 
 @RestController
 @RequestMapping("/api")
 public class ControladorBook {
+	
+	private IBookDAO iBookDAO;
+	
+	public ControladorBook(IBookDAO iBookDAO) {
+		this.iBookDAO = iBookDAO;
+	}
 	
 	@Autowired
 	BookServiceImpl bookServiceImpl;
@@ -32,6 +39,16 @@ public class ControladorBook {
 		
 		return bookServiceImpl.crearBook(book);
 		
+	}
+	
+	@GetMapping("/books/title/{title}")
+	public Book getBookByName(@PathVariable String title) {
+		return iBookDAO.findByTitle(title);
+	}
+	
+	@GetMapping("/books/isbn/{isbn}")
+	public Book getBookByIsbn(@PathVariable String isbn) {
+		return iBookDAO.findByIsbn(isbn);
 	}
 	
 	@GetMapping("/books/{id}")

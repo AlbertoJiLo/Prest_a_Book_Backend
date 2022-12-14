@@ -6,6 +6,7 @@ import com.example.prestabook.dto.Book;
 
 public interface IBookDAO extends JpaRepository<Book, Long>{
 
-	//public Book findByIsbn(String isbn);
+	Book findByTitle(String title);
+	Book findByIsbn(String isbn);
 
 }

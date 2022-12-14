@@ -12,12 +12,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.prestabook.dao.IEditorialDAO;
 import com.example.prestabook.dto.Editorial;
 import com.example.prestabook.service.EditorialServiceImpl;
 
 @RestController
 @RequestMapping("/api")
 public class ControladorEditorial {
+	
+	private IEditorialDAO iEditorialDAO;
+	
+	public ControladorEditorial(IEditorialDAO iEditorialDAO) {
+		this.iEditorialDAO = iEditorialDAO;
+	}
 	
 	@Autowired
 	EditorialServiceImpl editorialServiceImpl;
@@ -33,7 +40,10 @@ public class ControladorEditorial {
 		return editorialServiceImpl.crearEditorial(editorial);
 		
 	}
-	
+	@GetMapping("/editorials/name/{name}")
+	public Editorial getEditorialByName(@PathVariable String name) {
+		return iEditorialDAO.findByName(name);
+	}
 	
 	@GetMapping("/editorials/{id}")
 	public Editorial leerEditorial(@PathVariable(name="id") Long id) {
