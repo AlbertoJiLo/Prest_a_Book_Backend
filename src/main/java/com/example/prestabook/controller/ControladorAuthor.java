@@ -56,6 +56,11 @@ public class ControladorAuthor {
 		return iAuthorDAO.findByName(name);
 	}
 	
+	@GetMapping("/authors/surname/{surname}")
+	public Author getAuthorSurname(@PathVariable String surname) {
+		return iAuthorDAO.findBySurname(surname);
+	}
+	
 	@PutMapping("/authors/{id}")
 	public Author actualizarAuthor(@PathVariable(name="id")Long id,@RequestBody Author author) {
 		

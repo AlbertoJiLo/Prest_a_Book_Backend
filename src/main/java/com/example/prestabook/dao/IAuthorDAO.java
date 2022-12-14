@@ -7,5 +7,6 @@ import com.example.prestabook.dto.Author;
 public interface IAuthorDAO extends JpaRepository<Author, Long>{
 	
 	Author findByName(String name);
+	Author findBySurname(String surname);
 	
 }
