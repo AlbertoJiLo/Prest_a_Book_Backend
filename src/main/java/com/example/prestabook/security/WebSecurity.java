@@ -3,6 +3,7 @@ package com.example.prestabook.security;
 import static com.example.prestabook.security.Constants.LOGIN_URL;
 import static com.example.prestabook.security.Constants.REGISTER_URL;
 import static com.example.prestabook.security.Constants.BOOKS_URL;
+import static com.example.prestabook.security.Constants.ROLES_URL;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -50,6 +51,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
 			.antMatchers(HttpMethod.POST, REGISTER_URL).permitAll()
 			.antMatchers(HttpMethod.GET, BOOKS_URL).permitAll()
+			.antMatchers(HttpMethod.GET, ROLES_URL).permitAll()
 			.anyRequest().authenticated().and()
 				.addFilter(new JWTAuthenticationFilter(authenticationManager()))
 				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
