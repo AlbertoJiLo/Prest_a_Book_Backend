@@ -28,6 +28,7 @@ public class Book {
 	private String title;
 	private int num_pages;
 	private String genre;
+	private String img;
 	
 	@ManyToOne
 	@JoinColumn(name="id_editorial")
@@ -59,7 +60,7 @@ public class Book {
 
 	}
 
-	public Book(Long id, String isbn, String title, int num_pages, String genre, Editorial id_editorial, Usuario id_user, List<Wishes> wishes, List<Wrote> wrote, 
+	public Book(Long id, String isbn, String title, int num_pages, String genre,String img, Editorial id_editorial, Usuario id_user, List<Wishes> wishes, List<Wrote> wrote, 
 			Drawer id_drawer, List<Loan> loan) {
 		this.id = id;
 		this.isbn = isbn;
@@ -72,6 +73,7 @@ public class Book {
 		this.wrote = wrote;
 		this.id_drawer = id_drawer;
 		this.loan = loan;
+		this.img = img;
 	}
 
 
@@ -115,6 +117,14 @@ public class Book {
 
 	public void setGenre(String genre) {
 		this.genre = genre;
+	}
+	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public Editorial getId_editorial() {
