@@ -2,6 +2,7 @@ package com.example.prestabook.dto;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Book {
 	private String title;
 	private int num_pages;
 	private String genre;
+	@Column(name="descripcion")
 	private String description;
 	private String img;
 	
@@ -37,7 +39,7 @@ public class Book {
 	
 	@ManyToOne
 	@JoinColumn(name="id_user")
-	private Usuario id_user;
+	private Usuario usuario;
 	
 	@OneToMany
 	@JoinColumn(name="id_book")
@@ -61,7 +63,7 @@ public class Book {
 
 	}
 
-	public Book(Long id, String isbn, String title, int num_pages, String genre,String img, String description, Editorial id_editorial, Usuario id_user, List<Wishes> wishes, List<Wrote> wrote, 
+	public Book(Long id, String isbn, String title, int num_pages, String genre,String img, String description, Editorial id_editorial, Usuario usuario, List<Wishes> wishes, List<Wrote> wrote, 
 			Drawer id_drawer, List<Loan> loan) {
 		this.id = id;
 		this.isbn = isbn;
@@ -69,7 +71,7 @@ public class Book {
 		this.num_pages = num_pages;
 		this.genre = genre;
 		this.id_editorial = id_editorial;
-		this.id_user = id_user;
+		this.usuario = usuario;
 		this.wishes = wishes;
 		this.wrote = wrote;
 		this.id_drawer = id_drawer;
@@ -146,11 +148,11 @@ public class Book {
 	}
 
 	public Usuario getId_user() {
-		return id_user;
+		return usuario;
 	}
 
-	public void setId_user(Usuario id_user) {
-		this.id_user = id_user;
+	public void setId_user(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@JsonIgnore

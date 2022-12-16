@@ -30,24 +30,25 @@ public class Loan {
 	
 	@ManyToOne
 	@JoinColumn(name="id_loanee")
-	private Usuario id_loanee;
+	private Usuario loanee;
 	
 	private Date starting_date;
 	private Date end_date;
-	
+	private Boolean active;
 
 	//Constructores
 	public Loan() {
 		
 	}
 
-	public Loan(Long id, Book id_book, Usuario id_loaner, Usuario id_loanee, Date starting_date, Date end_date) {
+	public Loan(Long id, Book id_book, Usuario id_loaner, Usuario loanee, Date starting_date, Date end_date, Boolean active) {
 		this.id = id;
 		this.id_book = id_book;
 		this.id_loaner = id_loaner;
-		this.id_loanee = id_loanee;
+		this.loanee = loanee;
 		this.starting_date = starting_date;
 		this.end_date = end_date;
+		this.active = active;
 	}
 
 	//getters y setters
@@ -76,11 +77,11 @@ public class Loan {
 	}
 
 	public Usuario getId_loanee() {
-		return id_loanee;
+		return loanee;
 	}
 
-	public void setId_loanee(Usuario id_loanee) {
-		this.id_loanee = id_loanee;
+	public void setId_loanee(Usuario loanee) {
+		this.loanee = loanee;
 	}
 
 	public Date getStarting_date() {
@@ -99,14 +100,13 @@ public class Loan {
 		this.end_date = end_date;
 	}
 
-	@Override
-	public String toString() {
-		return "Loan [id=" + id + ", id_book=" + id_book + ", id_loaner=" + id_loaner + ", id_loanee=" + id_loanee
-				+ ", starting_date=" + starting_date + ", end_date=" + end_date + "]";
+	public Boolean getActive() {
+		return active;
 	}
 
-	
-	
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 	
 	
 }

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.prestabook.dto.Usuario;
 import com.example.prestabook.dto.Wishes;
+import com.example.prestabook.service.UserServiceImpl;
 import com.example.prestabook.service.WishesServiceImpl;
 
 @RestController
@@ -21,6 +23,9 @@ public class ControladorWishes {
 	
 	@Autowired
 	WishesServiceImpl wishesServiceImpl;
+	
+	@Autowired
+	UserServiceImpl userServiceImpl;
 	
 	@GetMapping("/wishes")
 	public List<Wishes> listarWishes(){
@@ -34,7 +39,6 @@ public class ControladorWishes {
 		
 	}
 	
-	
 	@GetMapping("/wishes/{id}")
 	public Wishes leerWishes(@PathVariable(name="id") Long id) {
 		
@@ -45,6 +49,12 @@ public class ControladorWishes {
 		System.out.println("Wishes segun ID: "+wishes);
 		
 		return wishes;
+	}
+	
+	@GetMapping("/wishes/user/{id_user}")
+	public Wishes getWishesByUser(@PathVariable Long id_user) {
+		Usuario usuario = userServiceImpl.leerUser(id_user);
+		return wishesServiceImpl.leerBookByUser(usuario);	
 	}
 	
 	@PutMapping("/wishes/{id}")

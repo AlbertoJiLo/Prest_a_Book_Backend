@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.prestabook.dao.ILoanDAO;
 import com.example.prestabook.dto.Loan;
+import com.example.prestabook.dto.Usuario;
 
 @Service
 public class LoanServiceImpl implements ILoanService{
@@ -38,6 +39,11 @@ public class LoanServiceImpl implements ILoanService{
 	@Override
 	public void borrarLoan(Long id) {
 		iLoanDAO.deleteById(id);
+	}
+
+	@Override
+	public Loan leerLoanByLoanee(Usuario loanee) {
+		return iLoanDAO.findByLoanee(loanee);
 	}
 
 }

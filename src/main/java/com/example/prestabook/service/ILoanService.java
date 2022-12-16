@@ -3,6 +3,7 @@ package com.example.prestabook.service;
 import java.util.List;
 
 import com.example.prestabook.dto.Loan;
+import com.example.prestabook.dto.Usuario;
 
 public interface ILoanService {
 
@@ -18,5 +19,5 @@ public interface ILoanService {
 	
 	public void borrarLoan(Long id);// DELETE
 	
-	
+	public Loan leerLoanByLoanee(Usuario loanee);
 }
