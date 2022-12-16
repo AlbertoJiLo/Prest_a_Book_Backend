@@ -57,6 +57,7 @@ public class ControladorLoan {
 		loan_seleccionado.setId_loanee(loan.getId_loanee());
 		loan_seleccionado.setStarting_date(loan.getStarting_date());
 		loan_seleccionado.setEnd_date(loan.getEnd_date());
+		loan_seleccionado.setActive(loan.getActive());
 		
 		loan_actualizado = loanServiceImpl.actualizarLoan(loan_seleccionado);
 		

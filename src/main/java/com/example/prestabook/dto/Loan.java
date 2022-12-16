@@ -34,20 +34,21 @@ public class Loan {
 	
 	private Date starting_date;
 	private Date end_date;
-	
+	private Boolean active;
 
 	//Constructores
 	public Loan() {
 		
 	}
 
-	public Loan(Long id, Book id_book, Usuario id_loaner, Usuario id_loanee, Date starting_date, Date end_date) {
+	public Loan(Long id, Book id_book, Usuario id_loaner, Usuario id_loanee, Date starting_date, Date end_date, Boolean active) {
 		this.id = id;
 		this.id_book = id_book;
 		this.id_loaner = id_loaner;
 		this.id_loanee = id_loanee;
 		this.starting_date = starting_date;
 		this.end_date = end_date;
+		this.active = active;
 	}
 
 	//getters y setters
@@ -97,6 +98,14 @@ public class Loan {
 
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 	@Override
