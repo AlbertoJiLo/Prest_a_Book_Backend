@@ -44,7 +44,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		 * 5. Se indica que el resto de URLs esten securizadas
 		 */
 		httpSecurity
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().cors().and().formLogin().permitAll().and() //.and().formLogin().permitAll()
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().formLogin().permitAll().and() //.and().formLogin().permitAll()
 			.cors().and()
 			.csrf().disable()
 			.authorizeRequests()
