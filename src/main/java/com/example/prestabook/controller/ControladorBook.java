@@ -76,7 +76,7 @@ public class ControladorBook {
 		book_seleccionado.setNum_pages(book.getNum_pages());
 		book_seleccionado.setGenre(book.getGenre());
 		book_seleccionado.setImg(book.getImg());
-		book_seleccionado.setDescripcion(book.getDescripcion());
+		book_seleccionado.setDescription(book.getDescription());
 		book_seleccionado.setId_drawer(book.getId_drawer());
 		book_seleccionado.setId_user(book.getId_user());
 		book_seleccionado.setId_editorial(book.getId_editorial());
