@@ -28,6 +28,7 @@ public class Book {
 	private String title;
 	private int num_pages;
 	private String genre;
+	private String descripcion;
 	private String img;
 	
 	@ManyToOne
@@ -60,7 +61,7 @@ public class Book {
 
 	}
 
-	public Book(Long id, String isbn, String title, int num_pages, String genre,String img, Editorial id_editorial, Usuario id_user, List<Wishes> wishes, List<Wrote> wrote, 
+	public Book(Long id, String isbn, String title, int num_pages, String genre,String img, String descripcion, Editorial id_editorial, Usuario id_user, List<Wishes> wishes, List<Wrote> wrote, 
 			Drawer id_drawer, List<Loan> loan) {
 		this.id = id;
 		this.isbn = isbn;
@@ -74,6 +75,7 @@ public class Book {
 		this.id_drawer = id_drawer;
 		this.loan = loan;
 		this.img = img;
+		this.descripcion = descripcion;
 	}
 
 
@@ -125,6 +127,14 @@ public class Book {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Editorial getId_editorial() {
