@@ -2,6 +2,7 @@ package com.example.prestabook.dto;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Book {
 	private String title;
 	private int num_pages;
 	private String genre;
+	@Column(name="descripcion")
 	private String description;
 	private String img;
 	
