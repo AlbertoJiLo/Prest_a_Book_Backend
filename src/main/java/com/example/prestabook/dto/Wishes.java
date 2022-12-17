@@ -24,17 +24,17 @@ public class Wishes {
 	
 	@ManyToOne
 	@JoinColumn(name="id_book")
-	private Book id_book;
+	private Book book;
 	
 	//Constructores
 	public Wishes() {
 		
 	}
 
-	public Wishes(Long id, Usuario usuario, Book id_book) {
+	public Wishes(Long id, Usuario usuario, Book book) {
 		this.id = id;
 		this.usuario = usuario;
-		this.id_book = id_book;
+		this.book = book;
 	}
 
 	//getters y setters
@@ -55,11 +55,11 @@ public class Wishes {
 	}
 
 	public Book getId_book() {
-		return id_book;
+		return book;
 	}
 
-	public void setId_book(Book id_book) {
-		this.id_book = id_book;
+	public void setId_book(Book book) {
+		this.book = book;
 	}
 
 	
