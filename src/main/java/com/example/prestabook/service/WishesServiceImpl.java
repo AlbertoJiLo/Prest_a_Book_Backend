@@ -42,7 +42,7 @@ public class WishesServiceImpl implements IWishesService{
 		iWishesDAO.deleteById(id);
 	}
 	
-	public Wishes leerBookByUser(Usuario usuario) {
+	public List<Wishes> leerBookByUser(Usuario usuario) {
         return iWishesDAO.findByUsuario(usuario);
     }
 

@@ -52,7 +52,7 @@ public class ControladorWishes {
 	}
 	
 	@GetMapping("/wishes/user/{id_user}")
-	public Wishes getWishesByUser(@PathVariable Long id_user) {
+	public List<Wishes> getWishesByUser(@PathVariable Long id_user) {
 		Usuario usuario = userServiceImpl.leerUser(id_user);
 		return wishesServiceImpl.leerBookByUser(usuario);	
 	}

@@ -19,7 +19,7 @@ public interface IWishesService {
 	
 	public void borrarWishes(Long id);// DELETE
 	
-	public Wishes leerBookByUser(Usuario usuario);
+	public List<Wishes> leerBookByUser(Usuario usuario);
 	
 	
 }

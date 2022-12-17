@@ -19,5 +19,5 @@ public interface IWroteService {
 	
 	public void borrarWrote(Long id);// DELETE
 	
-	public Wrote leerWroteByBook(Book book);
+	public List<Wrote> leerWroteByBook(Book book);
 }

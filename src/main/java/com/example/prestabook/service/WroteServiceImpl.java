@@ -1,7 +1,6 @@
 package com.example.prestabook.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +40,7 @@ public class WroteServiceImpl implements IWroteService{
 		iWroteDAO.deleteById(id);
 	}
 
-	public Wrote leerWroteByBook(Book book) {
+	public List<Wrote> leerWroteByBook(Book book) {
         return iWroteDAO.findByBook(book);
     }
 	

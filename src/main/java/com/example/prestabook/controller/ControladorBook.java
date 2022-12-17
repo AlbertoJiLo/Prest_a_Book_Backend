@@ -58,7 +58,7 @@ public class ControladorBook {
 	}
 	
 	@GetMapping("/books/user/{id_user}")
-    public Book getBookByUser(@PathVariable Long id_user) {
+    public List<Book> getBookByUser(@PathVariable Long id_user) {
         Usuario usuario = userServiceImpl.leerUser(id_user);
         return bookServiceImpl.leerBookByUser(usuario);
     }

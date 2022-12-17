@@ -42,7 +42,7 @@ public class LoanServiceImpl implements ILoanService{
 	}
 
 	@Override
-	public Loan leerLoanByLoanee(Usuario loanee) {
+	public List<Loan> leerLoanByLoanee(Usuario loanee) {
 		return iLoanDAO.findByLoanee(loanee);
 	}
 

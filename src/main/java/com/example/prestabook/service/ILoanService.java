@@ -19,5 +19,5 @@ public interface ILoanService {
 	
 	public void borrarLoan(Long id);// DELETE
 	
-	public Loan leerLoanByLoanee(Usuario loanee);
+	public List<Loan> leerLoanByLoanee(Usuario loanee);
 }

@@ -42,7 +42,7 @@ public class BookServiceImpl implements IBookService{
 		iBookDAO.deleteById(id);
 	}
 	
-	public Book leerBookByUser(Usuario usuario) {
+	public List<Book> leerBookByUser(Usuario usuario) {
         return iBookDAO.findByUsuario(usuario);
     }
 

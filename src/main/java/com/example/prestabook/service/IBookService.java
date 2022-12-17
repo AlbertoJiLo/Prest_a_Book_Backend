@@ -20,5 +20,5 @@ public interface IBookService {
 	
 	public void borrarBook(Long id);//Elimina el Book DELETE
 	
-	public Book leerBookByUser(Usuario usuario);
+	public List<Book> leerBookByUser(Usuario usuario);
 }
