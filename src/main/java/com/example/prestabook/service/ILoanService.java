@@ -2,6 +2,7 @@ package com.example.prestabook.service;
 
 import java.util.List;
 
+import com.example.prestabook.dto.Book;
 import com.example.prestabook.dto.Loan;
 import com.example.prestabook.dto.Usuario;
 
@@ -22,4 +23,6 @@ public interface ILoanService {
 	public List<Loan> leerLoanByLoanee(Usuario loanee);
 	
 	public List<Loan> leerLoanByLoaner(Usuario loaner);
+	
+	public Loan leerLoanByLoaneeBook(Usuario usuario, Book book);
 }

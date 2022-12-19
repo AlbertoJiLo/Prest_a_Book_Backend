@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.prestabook.dao.ILoanDAO;
+import com.example.prestabook.dto.Book;
 import com.example.prestabook.dto.Loan;
 import com.example.prestabook.dto.Usuario;
 
@@ -49,5 +50,9 @@ public class LoanServiceImpl implements ILoanService{
 	public List<Loan> leerLoanByLoaner(Usuario loaner) {
 		return iLoanDAO.findByLoaner(loaner);
 	}
+	
+	public Loan leerLoanByLoaneeBook(Usuario usuario, Book book) {
+        return iLoanDAO.findByLoaneeAndBook(usuario, book);
+    }
 
 }
