@@ -5,6 +5,7 @@ import static com.example.prestabook.security.Constants.REGISTER_URL;
 import static com.example.prestabook.security.Constants.BOOKS_URL;
 import static com.example.prestabook.security.Constants.ROLES_URL;
 import static com.example.prestabook.security.Constants.AUTHORS_URL;
+import static com.example.prestabook.security.Constants.WROTE_URL;
 
 import java.util.Arrays;
 
@@ -56,6 +57,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.GET, BOOKS_URL).permitAll()
 			.antMatchers(HttpMethod.GET, ROLES_URL).permitAll()
 			.antMatchers(HttpMethod.GET, AUTHORS_URL).permitAll()
+			.antMatchers(HttpMethod.GET, WROTE_URL).permitAll()
 			.anyRequest().authenticated().and()
 				.addFilter(new JWTAuthenticationFilter(authenticationManager()))
 				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
