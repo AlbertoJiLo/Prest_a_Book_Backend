@@ -43,6 +43,12 @@ public class ControladorLoan {
         return loanServiceImpl.leerLoanByLoanee(loanee);
     }
 	
+	@GetMapping("/loan/loaner/{id_user}")
+    public List<Loan> getLoanByLoaner(@PathVariable Long id_user) {
+        Usuario loaner = userServiceImpl.leerUser(id_user);
+        return loanServiceImpl.leerLoanByLoaner(loaner);
+    }
+	
 	@GetMapping("/loan/{id}")
 	public Loan leerLoan(@PathVariable(name="id") Long id) {
 		

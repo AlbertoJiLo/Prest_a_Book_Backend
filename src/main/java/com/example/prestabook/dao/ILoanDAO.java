@@ -12,5 +12,6 @@ import com.example.prestabook.dto.Usuario;
 public interface ILoanDAO extends JpaRepository<Loan, Long>{
 	
 	List<Loan> findByLoanee(Usuario loanee);
+	List<Loan> findByLoaner(Usuario loaner);
 	
 }

@@ -45,5 +45,9 @@ public class LoanServiceImpl implements ILoanService{
 	public List<Loan> leerLoanByLoanee(Usuario loanee) {
 		return iLoanDAO.findByLoanee(loanee);
 	}
+	
+	public List<Loan> leerLoanByLoaner(Usuario loaner) {
+		return iLoanDAO.findByLoaner(loaner);
+	}
 
 }

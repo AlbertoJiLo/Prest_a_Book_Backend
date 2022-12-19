@@ -26,7 +26,7 @@ public class Loan {
 	
 	@ManyToOne
 	@JoinColumn(name="id_loaner")
-	private Usuario id_loaner;
+	private Usuario loaner;
 	
 	@ManyToOne
 	@JoinColumn(name="id_loanee")
@@ -41,10 +41,10 @@ public class Loan {
 		
 	}
 
-	public Loan(Long id, Book id_book, Usuario id_loaner, Usuario loanee, Date starting_date, Date end_date, Boolean active) {
+	public Loan(Long id, Book id_book, Usuario loaner, Usuario loanee, Date starting_date, Date end_date, Boolean active) {
 		this.id = id;
 		this.id_book = id_book;
-		this.id_loaner = id_loaner;
+		this.loaner = loaner;
 		this.loanee = loanee;
 		this.starting_date = starting_date;
 		this.end_date = end_date;
@@ -69,11 +69,11 @@ public class Loan {
 	}
 
 	public Usuario getId_loaner() {
-		return id_loaner;
+		return loaner;
 	}
 
-	public void setId_loaner(Usuario id_loaner) {
-		this.id_loaner = id_loaner;
+	public void setId_loaner(Usuario loaner) {
+		this.loaner = loaner;
 	}
 
 	public Usuario getId_loanee() {
