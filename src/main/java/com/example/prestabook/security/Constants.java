@@ -8,6 +8,7 @@ public class Constants {
 	public static final String REGISTER_URL = "/api/users";
 	public static final String ROLES_URL = "/api/roles";
 	public static final String BOOKS_URL = "/api/books";
+	public static final String AUTHORS_URL = "/api/authors";
 	public static final String HEADER_AUTHORIZACION_KEY = "Authorization";
 	public static final String TOKEN_BEARER_PREFIX = "Bearer ";
 
