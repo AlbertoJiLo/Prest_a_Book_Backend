@@ -64,8 +64,8 @@ public class Loan {
 		return book;
 	}
 
-	public void setId_book(Book id_book) {
-		this.book = id_book;
+	public void setId_book(Book book) {
+		this.book = book;
 	}
 
 	public Usuario getId_loaner() {

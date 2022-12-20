@@ -34,7 +34,7 @@ public class Editorial {
 	private Usuario id_user;
 	
 	@OneToMany
-	@JoinColumn(name="id_editorial")
+	@JoinColumn(name="id")
 	private List<Book> books;
 	
 	//Constructores

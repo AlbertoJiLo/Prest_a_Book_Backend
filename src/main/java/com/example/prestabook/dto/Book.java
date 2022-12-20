@@ -2,6 +2,7 @@ package com.example.prestabook.dto;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -42,11 +46,11 @@ public class Book {
 	private Usuario usuario;
 	
 	@OneToMany
-	@JoinColumn(name="id_book")
+	@JoinColumn(name="id")
 	private List<Wishes> wishes;
 	
 	@OneToMany
-	@JoinColumn(name="id_book")
+	@JoinColumn(name="id")
 	private List<Wrote> wrote;
 	
 	@ManyToOne
@@ -54,7 +58,7 @@ public class Book {
 	private Drawer id_drawer;
 	
 	@OneToMany
-	@JoinColumn(name="id_book")
+	@JoinColumn(name="id")
 	private List<Loan> loan;
 	
 	//Constructores

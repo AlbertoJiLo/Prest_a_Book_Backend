@@ -58,8 +58,8 @@ public class Wrote {
 		return book;
 	}
 
-	public void setBook(Book id_book) {
-		this.book = id_book;
+	public void setBook(Book book) {
+		this.book = book;
 	}
 
 	
