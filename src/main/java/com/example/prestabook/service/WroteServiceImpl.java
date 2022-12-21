@@ -40,7 +40,7 @@ public class WroteServiceImpl implements IWroteService{
 		iWroteDAO.deleteById(id);
 	}
 
-	public List<Wrote> leerWroteByBook(Book book) {
+	public Wrote leerWroteByBook(Book book) {
         return iWroteDAO.findByBook(book);
     }
 	

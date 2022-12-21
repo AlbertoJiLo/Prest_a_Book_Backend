@@ -11,5 +11,5 @@ import com.example.prestabook.dto.Wrote;
 
 public interface IWroteDAO extends JpaRepository<Wrote, Long>{
 	
-	List<Wrote> findByBook(Book book);
+	Wrote findByBook(Book book);
 }

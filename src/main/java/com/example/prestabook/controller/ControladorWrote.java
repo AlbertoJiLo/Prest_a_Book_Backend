@@ -46,7 +46,7 @@ public class ControladorWrote {
 	}
 	
 	@GetMapping("/wrote/book/{id_book}")
-    public List<Wrote> getWroteByBook(@PathVariable Long id_book) {
+    public Wrote getWroteByBook(@PathVariable Long id_book) {
         Book book = bookServiceImpl.leerBook(id_book);
         return wroteServiceImpl.leerWroteByBook(book);
     }
