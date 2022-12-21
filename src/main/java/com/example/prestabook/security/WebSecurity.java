@@ -55,11 +55,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			.antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
 			.antMatchers(HttpMethod.POST, REGISTER_URL).permitAll()
+			.antMatchers(HttpMethod.GET, REGISTER_URL).permitAll()
 			.antMatchers(HttpMethod.GET, BOOKS_URL).permitAll()
 			.antMatchers(HttpMethod.GET, ROLES_URL).permitAll()
 			.antMatchers(HttpMethod.GET, AUTHORS_URL).permitAll()
 			.antMatchers(HttpMethod.GET, WROTE_URL).permitAll()
-			.antMatchers(HttpMethod.GET, USERNAME_URL).permitAll()
 			.anyRequest().authenticated().and()
 				.addFilter(new JWTAuthenticationFilter(authenticationManager()))
 				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
